@@ -10,17 +10,15 @@
 <body>
 
 <div class="container mt-4">
-
   @if(session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
     </div>
   @endif
-
+<br><br>
   <div class="container">
-    <div class="mbr-section-head">
-      Please fill in
-    </div>
+    <img style="margin-left:160px;width:150px;"src="./logo.png" alt="cc">
+
     <div class="row justify-content-center mt-4">
     <div class="col-lg-8 mx-auto mbr-form" >
         <form name="form" id="form" method="post" action="{{url('store-form')}}">
