@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Userrs;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\Support\MessageBag;
 use App\Http\Requests;
+use Exception;
+
 class UserrsController extends Controller
 {
     public function index()
@@ -18,11 +22,12 @@ class UserrsController extends Controller
             'firstname' => 'required|regex:/^[A-Z][^A-Z]*$/',
             'lastname' => 'required|regex:/[A-Z]+\[a-z]/',
     ]);
+
         $userr = new Userrs;
         $userr->firstname = $request->firstname;
         $userr->lastname = $request->lastname;
         $userr->save();
-        return redirect('/redirect')->with('status', 'Blog Post Form Data Has Been inserted');
+        return redirect('/redirect');
 
     }
     public function redirect(){

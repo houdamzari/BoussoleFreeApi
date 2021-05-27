@@ -10,8 +10,18 @@
 <body>
 
 <div class="container mt-4">
-  @if(session('status'))
-    <div class="alert alert-success">
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            <li>Make sure to add a full uppercase last name, and a first name that starts with a capital letter</li>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+    @if(session('status'))
+    <div class="alert alert-danger">
         {{ session('status') }}
     </div>
   @endif
