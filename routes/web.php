@@ -13,6 +13,10 @@ use App\Http\Controllers\UserrsController;
 |
 */
 
+Route::get('/generate-pdf', [
+    'uses' => 'App\Http\Controllers\UserrsController@generatePDF',
+    'as' => 'generate'
+]);
 
 Route::get('/', [UserrsController::class, 'index']);
 Route::post('store-form', [UserrsController::class, 'store']);

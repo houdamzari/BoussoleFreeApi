@@ -16,5 +16,7 @@
         <div class="card-header text-center">First Name</div> <div class="card-body text-center"> {{ $user[0]->firstname }}</div>
         <div class="card-header text-center">Last Name</div> <div class="card-body text-center">{{ $user[0]->lastname }}</div>
     </div>
+    <div><a style="margin-left:620px;"href='{{ route("generate") }}' class="btn btn-primary">Generate PDF</a></div>
+    <script src="{{ asset('js/app.js') }}" type="text/js"></script>
 </body>
 </html>
